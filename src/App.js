@@ -5,13 +5,14 @@ import CitySearch from './CitySearch';
 
 class App extends Component {
   state = {
-    events: []
+    events: [],
+    locations: []
   }
 
   render() {
     return (
       <div className="App">
-        <CitySearch />
+        <CitySearch locations={this.state.locations} />
         <EventList events={this.state.events} />
       </div>
     );
