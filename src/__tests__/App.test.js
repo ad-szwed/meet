@@ -58,7 +58,7 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
-  test('get list of all events weh "see all cities" option is selected', async () => {
+  test('get list of all events when "see all cities" option is selected', async () => {
     const AppWrapper = mount(<App />);
     const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
     await suggestionItems.at(suggestionItems.length - 1).simulate('click');
