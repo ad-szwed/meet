@@ -5,6 +5,7 @@ import EventList from '../EventList'
 import CitySearch from '../CitySearch'
 import { mockData } from '../mock-data';
 import { extractLocations, getEvents } from '../api';
+import NumberOfEvents from '../NumberOfEvents';
 
 
 // UNIT TESTING WITH SHALLOW RENDERING:
@@ -22,6 +23,11 @@ describe('<App /> component', () => {
 
   test('render CitySearch', () => {
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
+  });
+
+  // show number of events
+  test('render NumberOfEvents component', () => {
+    expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
   });
 });
 

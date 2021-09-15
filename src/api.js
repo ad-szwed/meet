@@ -38,6 +38,7 @@ const getToken = async (code) => {
 };
 
 export const extractLocations = (events) => {
+  console.log(events, '!!events');
   var extractLocations = events.map((event) => event.location);
   var locations = [...new Set(extractLocations)];
   return locations;
@@ -66,7 +67,7 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url = 'https://ig8q1yzl2d.execute-api.eu-central-1.amazonaws.com/dev/get-events/{access_token}' + '/' + token;
+    const url = 'https://ig8q1yzl2d.execute-api.eu-central-1.amazonaws.com/dev/get-events' + '/' + token;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
