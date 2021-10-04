@@ -35,7 +35,6 @@ class CitySearch extends React.Component {
   handleItemClicked(suggestion) {
     this.setState({
       query: suggestion,
-      // suggestions: [],
       showSuggestions: false,
       infoText: '',
     });
