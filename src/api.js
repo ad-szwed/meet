@@ -58,12 +58,10 @@ const checkToken = async (accessToken) => {
 export const getEvents = async () => {
   NProgress.start();
 
-  if (!navigator.onLine) {
-    const data = localStorage.getItem('lastEvents');
-    // eslint-disable-next-line no-undef
+  if (!navigator.onLine) { // check whether user is offline
+    const events = await localStorage.getItem("lastEvents"); // load stored event
     NProgress.done();
-    // eslint-disable-next-line no-undef
-    return data ? JSON.parse(events).events : [];
+    return events?JSON.parse(events).events:[];
   } 
   
   if (window.location.href.startsWith("http://localhost")) {
