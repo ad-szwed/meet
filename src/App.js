@@ -56,7 +56,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.offlineText ? <ErrorAlert text={this.state.offLineText} /> : null}
+        <ErrorAlert text={this.state.offLineText} />
         <CitySearch
           locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList
