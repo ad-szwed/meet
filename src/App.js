@@ -5,7 +5,6 @@ import CitySearch from './CitySearch';
 import { getEvents, extractLocations } from './api';
 import NumberOfEvents from './NumberOfEvents';
 import './nprogress.css';
-import { ErrorAlert } from './Alert';
 
 class App extends Component {
   state = {
@@ -20,7 +19,7 @@ class App extends Component {
     if (!navigator.onLine) {
       this.setState({
         infoText:
-          'You are not connected from internet(data may not be up to date)',
+          'You are OFFLINE - data may not be up to date',
       });
     } else {
       this.setState({
@@ -56,8 +55,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ErrorAlert text={this.state.infoText} />
-        <h1 className='eventTitle'>OFFLINE</h1>
         <CitySearch
           locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList
