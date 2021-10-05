@@ -20,7 +20,7 @@ class App extends Component {
     if (!navigator.onLine) {
       this.setState({
         infoText:
-          'You are not connected from internet(data may not be up to date)',
+          'Your offline, data may not be up to date',
       });
     } else {
       this.setState({
@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <div className="App">
         <InfoAlert text={this.state.infoText} />
-        <h1 className='eventTitle'>Event Meetup App</h1>
+        <h1 className='eventTitle'>Meet</h1>
         <CitySearch
           locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList
