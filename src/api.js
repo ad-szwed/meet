@@ -65,7 +65,8 @@ export const getEvents = async () => {
       events: JSON.parse(events).events,
       locations: extractLocations(JSON.parse(events).events),
     };
-
+  } 
+  
   if (window.location.href.startsWith("http://localhost")) {
     NProgress.done();
     return mockData;
