@@ -59,12 +59,11 @@ export const getEvents = async () => {
   NProgress.start();
 
   if (!navigator.onLine) {
-    const events = localStorage.getItem('lastEvents');
+    const data = localStorage.getItem('lastEvents');
+    // eslint-disable-next-line no-undef
     NProgress.done();
-    return {
-      events: JSON.parse(events).events,
-      locations: extractLocations(JSON.parse(events).events),
-    };
+    // eslint-disable-next-line no-undef
+    return data ? JSON.parse(events).events : [];
   } 
   
   if (window.location.href.startsWith("http://localhost")) {
