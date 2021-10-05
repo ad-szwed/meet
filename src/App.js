@@ -19,12 +19,12 @@ class App extends Component {
     // load events from the storage
     if (!navigator.onLine) {
       this.setState({
-        ErrorAlert:
+        offlineText:
           'You are OFFLINE - data may not be up to date',
       });
     } else {
       this.setState({
-        ErrorAlert: '',
+        offlineText: '',
       });
     }
 
@@ -56,7 +56,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <ErrorAlert text={this.state.errorText} /> */}
+        {this.state.offlineText ? <ErrorAlert text={this.state.offLineText} /> : null}
         <CitySearch
           locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList
