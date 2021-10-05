@@ -5,6 +5,7 @@ import CitySearch from './CitySearch';
 import { getEvents, extractLocations } from './api';
 import NumberOfEvents from './NumberOfEvents';
 import './nprogress.css';
+import { ErrorAlert } from './Alert';
 
 class App extends Component {
   state = {
@@ -18,12 +19,12 @@ class App extends Component {
     // load events from the storage
     if (!navigator.onLine) {
       this.setState({
-        infoText:
+        ErrorAlert:
           'You are OFFLINE - data may not be up to date',
       });
     } else {
       this.setState({
-        infoText: '',
+        ErrorAlert: '',
       });
     }
 
@@ -55,6 +56,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* <ErrorAlert text={this.state.errorText} /> */}
         <CitySearch
           locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList
