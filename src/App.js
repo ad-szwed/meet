@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
-import { getEvents, extractLocations } from './api';
+import { getEvents, extractLocations,checkToken, getAccessToken } from './api';
 import NumberOfEvents from './NumberOfEvents';
 import './nprogress.css';
 import { InfoAlert } from './Alert';
+import WelcomeScreen from './WelcomeScreen';
 
 class App extends Component {
   state = {
     events: [],
     locations: [],
-    numberOfEvents: 32
+    numberOfEvents: 32,
+    // part of google's verificaiton
+    showWelcomeScreen: undefined
   }
 
   componentDidMount() {
@@ -54,6 +57,11 @@ class App extends Component {
 
 
   render() {
+
+    // part of google's verification
+    if (this.state.showWelcomeScreen === undefined) return <div
+className="App" />
+
     return (
       <div className="App">
         <InfoAlert text={this.state.infoText} />
@@ -65,6 +73,10 @@ class App extends Component {
         <NumberOfEvents
           numberOfEvents={this.state.numberOfEvents}
           updateEvents={this.updateEvents} />
+
+        {/* part of google's verification */}
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+        getAccessToken={() => { getAccessToken() }} />
       </div>
     );
   }
