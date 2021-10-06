@@ -45,14 +45,13 @@ class CitySearch extends React.Component {
     const { query, showSuggestions, suggestions } = this.state;
     return (
       <div className="CitySearch">
-        <label htmlFor="CitySearch">Select a City:</label>
         <InfoAlert text={this.state.infoText} />
         <input
           type="text"
           className="city"
           value={query}
           onChange={(e) => this.handleInputChanged(e)}
-          placeholder="enter city here"
+          placeholder="Search for city..."
           onFocus={() => {
             this.setState({ showSuggestions: true });
           }}
