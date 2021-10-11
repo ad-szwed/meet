@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
-import { getEvents, extractLocations,checkToken, getAccessToken } from './api';
+import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import NumberOfEvents from './NumberOfEvents';
 import './nprogress.css';
 import { InfoAlert } from './Alert';
@@ -32,6 +32,7 @@ class App extends Component {
        }
       });
     }
+    
     
     // load events from the storage
     if (!navigator.onLine) {

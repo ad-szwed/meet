@@ -22,7 +22,7 @@ const removeQuery = () => {
 };
 
 // getting the access token
-const getToken = async (code) => {
+export const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
     `https://ig8q1yzl2d.execute-api.eu-central-1.amazonaws.com/dev/api/token/${encodeCode}`
