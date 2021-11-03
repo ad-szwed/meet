@@ -10,6 +10,7 @@ import WelcomeScreen from './WelcomeScreen';
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
+import EventGenre from './EventGenre';
 
 class App extends Component {
   state = {
@@ -94,6 +95,7 @@ class App extends Component {
         <h1 className='eventTitle'>Meet</h1>
         <CitySearch
           locations={this.state.locations} updateEvents={this.updateEvents} />
+        <EventGenre events={this.state.events} />
         <ResponsiveContainer height={400} >
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
             <CartesianGrid />
