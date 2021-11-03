@@ -7,7 +7,6 @@ class CitySearch extends React.Component {
     suggestions: [],
     showSuggestions: false
   }
-  
 
   // update state of city in text input
   handleInputChanged = (event) => {
