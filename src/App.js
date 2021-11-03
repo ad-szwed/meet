@@ -62,14 +62,11 @@ class App extends Component {
       const locationEvents = location === 'all'
         ? events.slice(0, eventCount)
         : events.filter((event) => event.location === location);
-      console.log(locationEvents, "locationEvents in app.js")
-      console.log("here")
       this.setState({
         events: locationEvents,
       });
     });
   }
-
   render() {
 
     // part of google's verification
