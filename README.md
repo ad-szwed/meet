@@ -1,4 +1,4 @@
-# Meet
+# Meet v1.0
 A PWA built with React. Created with compliance to the TDD processes. The application uses the Google Calendar API to fetch upcoming events.
 
 ## Features
